@@ -1,0 +1,30 @@
+{
+    "name": "ag84ark/colete-online-ro-php",
+    "description": "PHP library to work with colete-online.ro API based on Saloon PHP",
+    "type": "library",
+    "require": {
+        "php": "^8.1",
+        "saloonphp/saloon": "^3.0",
+        "illuminate/collections": "^v10|^v11|^v12"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ag84ark\\ColeteOnlineRoPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ag84ark",
+            "email": "arkangel062003@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "laravel/pint": "^1.14"
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "format": "vendor/bin/pint"
+    }
+  }
