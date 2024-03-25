@@ -7,11 +7,13 @@ use Saloon\Http\Connector;
 use Saloon\Http\Request;
 use Saloon\Traits\OAuth2\ClientCredentialsGrant;
 use Saloon\Traits\Plugins\AcceptsJson;
+use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
 class ColeteOnlineApiConnector extends Connector
 {
     use AcceptsJson;
     use ClientCredentialsGrant;
+    use AlwaysThrowOnErrors;
 
     public function __construct(
         protected string $clientId,
