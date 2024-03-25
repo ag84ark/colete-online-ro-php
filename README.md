@@ -111,9 +111,9 @@ $countries = $coleteOnline->searchCountry('rom');
 
 
 $countries->itemsCollection()->each(function (CountryDTO $country) {
-    echo $country->name . PHP_EOL;
-    echo $country->nameRo . PHP_EOL;
-    echo $country->isoCode . PHP_EOL;
+    echo $country->name . PHP_EOL; # "Romania"
+    echo $country->nameRo . PHP_EOL; # "Romania"
+    echo $country->isoCode . PHP_EOL; # "RO"
 });
 ```
 
@@ -127,9 +127,9 @@ use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\LocationDTO;
 $locations = $coleteOnline->searchLocation('ro', 'ghi');
 
 $locations->itemsCollection()->each(function (LocationDTO $location) {
-    echo $location->city . PHP_EOL; "Ghimbav"
-    echo $location->county . PHP_EOL; "Brasov"
-    echo $location->countyCode . PHP_EOL; "BV"
+    echo $location->city . PHP_EOL; # "Ghimbav"
+    echo $location->county . PHP_EOL; # "Brasov"
+    echo $location->countyCode . PHP_EOL; # "BV"
 });
 ```
 
@@ -147,9 +147,9 @@ $cities = $coleteOnline->searchCity('RO', 'Ilfov', 'draga');
 $cities = $coleteOnline->searchCity('ro', 'IF', 'draga', true); // use county code
 
 $cities->itemsCollection()->each(function (CityDTO $city) {
-    echo $city->localityName . PHP_EOL; "Draganesti"
-    echo $city->county . PHP_EOL; "Ilfov"
-    echo $city->countyCode . PHP_EOL; "IF"
+    echo $city->localityName . PHP_EOL; # "Draganesti"
+    echo $city->county . PHP_EOL; # "Ilfov"
+    echo $city->countyCode . PHP_EOL; # "IF"
 });
 ```
 
@@ -168,8 +168,8 @@ $streets = $coleteOnline->searchStreet('ro', 'IF', 'Draganesti', 'strada', null,
 $streets = $coleteOnline->searchStreet('ro', 'IF', 'Draganesti', 'strada', 300367, true); // use county code
 
 $streets->itemsCollection()->each(function (StreetDTO $street) {
-    echo $street->name . PHP_EOL; "Piața Avram Iancu"
-    echo $street->highlight . PHP_EOL; "true|false|null"
+    echo $street->name . PHP_EOL; # "Piața Avram Iancu"
+    echo $street->highlight . PHP_EOL; # "true|false|null"
 });
 ```
 
@@ -187,9 +187,9 @@ $postalCodes = $coleteOnline->searchPostalCode('RO', 'TM', 'Timisoara', 'Piața 
 
 
 $postalCodes->itemsCollection()->each(function (PostalCodeDTO $postalCode) {
-    echo $postalCode->code . PHP_EOL; "300367"
-    echo $postalCode->info . PHP_EOL; "nr. 9-13; 6-T"
-    echo $postalCode->street . PHP_EOL; "Piața Avram Iancu"
+    echo $postalCode->code . PHP_EOL; # "300367"
+    echo $postalCode->info . PHP_EOL; # "nr. 9-13; 6-T"
+    echo $postalCode->street . PHP_EOL; # "Piața Avram Iancu"
 });
 ```
 
@@ -204,13 +204,13 @@ use Ag84ark\ColeteOnlineRoPhp\DTOs\Address\AddressItemDTO;
 $addresses = $coleteOnline->getAddressList();
 
 $addresses->itemsCollection()->each(function (AddressItemDTO $addressItem) {
-    echo $addressItem->locationId . PHP_EOL; "123456"
-    echo $addressItem->shortNamename . PHP_EOL; "Home"
-    echo $addressItem->address->street . PHP_EOL; "Piața Avram Iancu"
-    echo $addressItem->address->number . PHP_EOL; "13"
+    echo $addressItem->locationId . PHP_EOL; # "123456"
+    echo $addressItem->shortNamename . PHP_EOL; # "Home"
+    echo $addressItem->address->street . PHP_EOL; # "Piața Avram Iancu"
+    echo $addressItem->address->number . PHP_EOL; # "13"
     
-    echo $addressItem->contact->name . PHP_EOL; "John Doe"
-    echo $addressItem->contact->phone . PHP_EOL; "0723456789"
+    echo $addressItem->contact->name . PHP_EOL; # "John Doe"
+    echo $addressItem->contact->phone . PHP_EOL; # "0723456789"
 });
 ```
 
@@ -294,13 +294,13 @@ $orderSender = OrderSender::create(
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Order\CreateOrderResponse $createOrder */
 $createOrder = $coleteOnline->createOrder($request);
 
-echo $createOrder->response()->uniqueId . PHP_EOL; "123456"
-echo $createOrder->response()->awb . PHP_EOL; "ASA123456"
-echo $createOrder->response()->curierService->service->id . PHP_EOL; "6"
-echo $createOrder->response()->curierService->service->name . PHP_EOL; "Domestic Express"
-echo $createOrder->response()->curierService->service->courierName . PHP_EOL; "TNT"
-echo $createOrder->response()->curierService->price->total . PHP_EOL; "23.80"
-echo $createOrder->response()->curierService->price->noVat . PHP_EOL; "20.00"
+echo $createOrder->response()->uniqueId . PHP_EOL; # "123456"
+echo $createOrder->response()->awb . PHP_EOL; # "ASA123456"
+echo $createOrder->response()->curierService->service->id . PHP_EOL; # "6"
+echo $createOrder->response()->curierService->service->name . PHP_EOL; # "Domestic Express"
+echo $createOrder->response()->curierService->service->courierName . PHP_EOL; # "TNT"
+echo $createOrder->response()->curierService->price->total . PHP_EOL; # "23.80"
+echo $createOrder->response()->curierService->price->noVat . PHP_EOL; # "20.00"
 ```
 
 
@@ -385,18 +385,18 @@ $orderSender = OrderSender::create(
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Order\OrderPricingResponse $orderPricing */
 $orderPricing = $coleteOnline->getOrderPricing($request);
 
-echo $orderPricing->response()->selected->service->id . PHP_EOL; "6"
-echo $orderPricing->response()->selected->service->name . PHP_EOL; "Domestic Express"
-echo $orderPricing->response()->selected->service->courierName . PHP_EOL; "TNT"
-echo $orderPricing->response()->selected->price->total . PHP_EOL; "23.80"
-echo $orderPricing->response()->selected->price->noVat . PHP_EOL; "20.00"
+echo $orderPricing->response()->selected->service->id . PHP_EOL; # "6"
+echo $orderPricing->response()->selected->service->name . PHP_EOL; # "Domestic Express"
+echo $orderPricing->response()->selected->service->courierName . PHP_EOL; # "TNT"
+echo $orderPricing->response()->selected->price->total . PHP_EOL; # "23.80"
+echo $orderPricing->response()->selected->price->noVat . PHP_EOL; # "20.00"
 
 $orderPricing->response()->getCurriersList()->each(function (OrderCurrierServiceDTO $currier) {
-    echo $currier->service->id . PHP_EOL; "6"
-    echo $currier->service->name . PHP_EOL; "Domestic Express"
-    echo $currier->service->courierName . PHP_EOL; "TNT"
-    echo $currier->price->total . PHP_EOL; "23.80"
-    echo $currier->price->noVat . PHP_EOL; "20.00"
+    echo $currier->service->id . PHP_EOL; # "6"
+    echo $currier->service->name . PHP_EOL; # "Domestic Express"
+    echo $currier->service->courierName . PHP_EOL; # "TNT"
+    echo $currier->price->total . PHP_EOL; # "23.80"
+    echo $currier->price->noVat . PHP_EOL; # "20.00"
 });
 ```
 
