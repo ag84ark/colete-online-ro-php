@@ -18,12 +18,12 @@ class SearchLocationResponse extends Response
     {
         $data = $this->json();
 
-        if (! is_array($data)) {
+        if (! is_array($data) || ! array_key_exists('names', $data)) {
             return [];
         }
 
         $items = [];
-        foreach ($data as $item) {
+        foreach ($data['names'] as $item) {
             $items[] = new LocationDTO(
                 city: $item['city'],
                 county: $item['county'],

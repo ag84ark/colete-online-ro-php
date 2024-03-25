@@ -6,7 +6,7 @@ class CityDTO
 {
     public function __construct(
         public readonly string $localityName,
-        public readonly string $county,
+        public readonly string $countyName,
         public readonly string $countyCode,
     ) {
     }

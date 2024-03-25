@@ -18,7 +18,7 @@ class SearchPostalCodeResponse extends Response
     {
         $data = $this->json();
 
-        if (! is_array($data)) {
+        if (! is_array($data) || ! array_key_exists('codes', $data)) {
             return [];
         }
 

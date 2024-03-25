@@ -19,15 +19,15 @@ class SearchCityResponse extends Response
     {
         $data = $this->json();
 
-        if (! is_array($data) || ! isset($data['data'])) {
+        if (! is_array($data) || ! isset($data['list'])) {
             return [];
         }
 
         $items = [];
-        foreach ($data['data'] as $item) {
+        foreach ($data['list'] as $item) {
             $items[] = new CityDTO(
                 localityName: $item['localityName'],
-                county: $item['county'],
+                countyName: $item['countyName'],
                 countyCode: $item['countyCode'],
             );
         }

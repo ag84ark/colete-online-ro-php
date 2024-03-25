@@ -124,7 +124,7 @@ use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\LocationDTO;
 
 /** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Search\SearchLocationResponse $locations */
-$locations = $coleteOnline->searchLocation('ro', 'ghi');
+$locations = $coleteOnline->searchLocation('ro', 'ghim');
 
 $locations->itemsCollection()->each(function (LocationDTO $location) {
     echo $location->city . PHP_EOL; # "Ghimbav"
@@ -148,7 +148,7 @@ $cities = $coleteOnline->searchCity('ro', 'IF', 'draga', true); // use county co
 
 $cities->itemsCollection()->each(function (CityDTO $city) {
     echo $city->localityName . PHP_EOL; # "Draganesti"
-    echo $city->county . PHP_EOL; # "Ilfov"
+    echo $city->countyName . PHP_EOL; # "Ilfov"
     echo $city->countyCode . PHP_EOL; # "IF"
 });
 ```
@@ -161,11 +161,11 @@ use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\StreetDTO;
 /** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Search\SearchStreetResponse $streets */
 
-$streets = $coleteOnline->searchStreet('RO', 'Ilfov', 'Draganesti', 'strada');
-$streets = $coleteOnline->searchStreet('RO', 'Ilfov', 'Draganesti', 'strada', 300367); // use postal code
+$streets = $coleteOnline->searchStreet('RO', 'Pitesti', 'Arges', 'gr');
+$streets = $coleteOnline->searchStreet('RO', 'Pitesti', 'Arges', 'gr', 300367); // use postal code
 // Or
-$streets = $coleteOnline->searchStreet('ro', 'IF', 'Draganesti', 'strada', null, true); // don't use postal code
-$streets = $coleteOnline->searchStreet('ro', 'IF', 'Draganesti', 'strada', 300367, true); // use county code
+$streets = $coleteOnline->searchStreet("RO", "Pitesti", "AG", "gr", null, true); // don't use postal code
+$streets = $coleteOnline->searchStreet('RO', 'Pitesti', 'AG', 'gr', 300367, true); // use county code
 
 $streets->itemsCollection()->each(function (StreetDTO $street) {
     echo $street->name . PHP_EOL; # "Piața Avram Iancu"
