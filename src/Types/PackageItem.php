@@ -5,10 +5,10 @@ namespace Ag84ark\ColeteOnlineRoPhp\Types;
 class PackageItem extends BaseType
 {
     public function __construct(
-        protected int $weight,
-        protected ?int $height,
-        protected ?int $width,
-        protected ?int $length,
+        protected float $weight,
+        protected ?float $height,
+        protected ?float $width,
+        protected ?float $length,
     ) {
     }
 

@@ -8,6 +8,7 @@ class CurierServiceDTO
         public readonly int $id,
         public readonly string $courierName,
         public readonly string $name,
+        public readonly ?string $activationId = null,
     ) {
     }
 
@@ -17,6 +18,7 @@ class CurierServiceDTO
             id: $data['id'],
             courierName: $data['courierName'],
             name: $data['name'],
+            activationId: $data['activationId'] ?? null,
         );
     }
 }

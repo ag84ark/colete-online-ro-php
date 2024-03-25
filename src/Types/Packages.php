@@ -8,6 +8,9 @@ class Packages extends BaseType
 
     protected PackageTypeEnum $type;
 
+    /**
+     * @var PackageItem[]
+     */
     protected array $list = [];
 
     public function __construct(PackageTypeEnum $type, string $content)

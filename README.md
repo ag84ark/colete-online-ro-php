@@ -265,7 +265,7 @@ $orderSender = OrderSender::create(
         $packages = (new Packages(type: PackageTypeEnum::Box, content: 'Produse'))
                 ->addPackageItem(
                     new PackageItem(
-                        weight: 2000,
+                        weight: 2.1,
                         height: 10,
                         width: 15,
                         length: 20,
@@ -369,7 +369,7 @@ $orderSender = OrderSender::create(
             packages: (new Packages(type: PackageTypeEnum::Box, content: 'Produse'))
                 ->addPackageItem(
                     new PackageItem(
-                        weight: 2000,
+                        weight: 2.1,
                         height: 10,
                         width: 15,
                         length: 20,
