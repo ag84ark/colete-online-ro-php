@@ -49,10 +49,10 @@ $coleteOnline = new ColeteOnline(
 
 ### Get all available services
 ```php
-use \Ag84ark\ColeteOnlineRoPhp\DTOs\Service\ServiceItemDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Service\ServiceItemDTO;
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
-/** @var Ag84ark\ColeteOnlineRoPhp\Responses\Service\ServiceListResponse $services */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Service\ServiceListResponse $services */
 $services = $coleteOnline->getServicesList();
 $servicesList = $services->items(); // Array
 $servicesListCollection = $services->itemsCollection(); // Illuminate\Support\Collection
@@ -64,7 +64,7 @@ $servicesListCollection->each(function (ServiceItemDTO $service) {
 
 ### Get user balance
 ```php
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\User\UserBalanceResponse $userBalance */
 $userBalance = $coleteOnline->getUserBalance();
 echo $userBalance->balance()->amount . PHP_EOL;
@@ -73,7 +73,7 @@ echo $userBalance->balance()->bonus . PHP_EOL;
 
 ### Get the AWB
 ```php
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 $awbDownload = $coleteOnline->getOrderAwb(123456)->saveBodyToFile('awb.pdf');
 // Or
 $coleteOnline->getOrderAwbAndSaveToFile(123456, 'awb.pdf');
@@ -85,7 +85,7 @@ $stream = $coleteOnline->getOrderAwbStream(123456);
 ```php
 use Ag84ark\ColeteOnlineRoPhp\DTOs\Order\OrderStatusHistoryItemDTO;
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Order\OrderStatusResponse $orderStatus */
 $orderStatus = $coleteOnline->getOrderStatus(123456);
 
@@ -103,9 +103,9 @@ echo $orderStatus->response()
 ### Search Country
 ```php
 
-use \Ag84ark\ColeteOnlineRoPhp\DTOs\Search\CountryDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\CountryDTO;
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Search\SearchCountryResponse $countries */
 $countries = $coleteOnline->searchCountry('rom');
 
@@ -120,9 +120,9 @@ $countries->itemsCollection()->each(function (CountryDTO $country) {
 ### Search Location
 
 ```php
-use \Ag84ark\ColeteOnlineRoPhp\DTOs\Search\LocationDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\LocationDTO;
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Search\SearchLocationResponse $locations */
 $locations = $coleteOnline->searchLocation('ro', 'ghi');
 
@@ -137,9 +137,9 @@ $locations->itemsCollection()->each(function (LocationDTO $location) {
 ### Search City
 
 ```php
-use \Ag84ark\ColeteOnlineRoPhp\DTOs\Search\CityDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\CityDTO;
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Search\SearchCityResponse $cities */
 
 $cities = $coleteOnline->searchCity('RO', 'Ilfov', 'draga');
@@ -156,9 +156,9 @@ $cities->itemsCollection()->each(function (CityDTO $city) {
 ### Search Street
 
 ```php
-use \Ag84ark\ColeteOnlineRoPhp\DTOs\Search\StreetDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\StreetDTO;
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Search\SearchStreetResponse $streets */
 
 $streets = $coleteOnline->searchStreet('RO', 'Ilfov', 'Draganesti', 'strada');
@@ -176,9 +176,9 @@ $streets->itemsCollection()->each(function (StreetDTO $street) {
 ### Search Postal Code
 
 ```php
-use \Ag84ark\ColeteOnlineRoPhp\DTOs\Search\PostalCodeDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\PostalCodeDTO;
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Search\SearchPostalCodeResponse $postalCodes */
 
 $postalCodes = $coleteOnline->searchPostalCode('RO', 'Timis', 'Timisoara', 'Piața Avram Iancu');
@@ -196,9 +196,9 @@ $postalCodes->itemsCollection()->each(function (PostalCodeDTO $postalCode) {
 ### Get Addresses List
 
 ```php
-use \Ag84ark\ColeteOnlineRoPhp\DTOs\Address\AddressItemDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Address\AddressItemDTO;
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Address\AddressListResponse $addresses */
 
 $addresses = $coleteOnline->getAddressList();
@@ -217,16 +217,16 @@ $addresses->itemsCollection()->each(function (AddressItemDTO $addressItem) {
 ### Create Order
 
 ```php
-use \Ag84ark\ColeteOnlineRoPhp\Types\Order;
-use \Ag84ark\ColeteOnlineRoPhp\Types\OrderSender;
-use \Ag84ark\ColeteOnlineRoPhp\Types\OrderRecipient;
-use \Ag84ark\ColeteOnlineRoPhp\Types\Contact;
-use \Ag84ark\ColeteOnlineRoPhp\Types\Address;
-use \Ag84ark\ColeteOnlineRoPhp\Types\Packages;
-use \Ag84ark\ColeteOnlineRoPhp\Types\PackageTypeEnum;
-use \Ag84ark\ColeteOnlineRoPhp\Types\PackageItem;
-use \Ag84ark\ColeteOnlineRoPhp\Types\CurrierService;
-use \Ag84ark\ColeteOnlineRoPhp\Types\ServiceSelectionTypeEnum;
+use Ag84ark\ColeteOnlineRoPhp\Types\Order;
+use Ag84ark\ColeteOnlineRoPhp\Types\OrderSender;
+use Ag84ark\ColeteOnlineRoPhp\Types\OrderRecipient;
+use Ag84ark\ColeteOnlineRoPhp\Types\Contact;
+use Ag84ark\ColeteOnlineRoPhp\Types\Address;
+use Ag84ark\ColeteOnlineRoPhp\Types\Packages;
+use Ag84ark\ColeteOnlineRoPhp\Types\PackageTypeEnum;
+use Ag84ark\ColeteOnlineRoPhp\Types\PackageItem;
+use Ag84ark\ColeteOnlineRoPhp\Types\CurrierService;
+use Ag84ark\ColeteOnlineRoPhp\Types\ServiceSelectionTypeEnum;
 
 
 $orderSender = OrderSender::create(
@@ -290,7 +290,7 @@ $orderSender = OrderSender::create(
             extraOptions: $extraOptions
         );
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Order\CreateOrderResponse $createOrder */
 $createOrder = $coleteOnline->createOrder($request);
 
@@ -307,19 +307,19 @@ echo $createOrder->response()->curierService->price->noVat . PHP_EOL; "20.00"
 ### Get Order Pricing
 
 ```php
-use \Ag84ark\ColeteOnlineRoPhp\DTOs\Order\OrderCurrierServiceDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Order\OrderCurrierServiceDTO;
 
-use \Ag84ark\ColeteOnlineRoPhp\Types\OrderPricing;
-use \Ag84ark\ColeteOnlineRoPhp\Types\OrderSender;
-use \Ag84ark\ColeteOnlineRoPhp\Types\OrderRecipient;
-use \Ag84ark\ColeteOnlineRoPhp\Types\Contact;
-use \Ag84ark\ColeteOnlineRoPhp\Types\Address;
-use \Ag84ark\ColeteOnlineRoPhp\Types\Packages;
-use \Ag84ark\ColeteOnlineRoPhp\Types\PackageTypeEnum;
-use \Ag84ark\ColeteOnlineRoPhp\Types\PackageItem;
-use \Ag84ark\ColeteOnlineRoPhp\Types\CurrierService;
-use \Ag84ark\ColeteOnlineRoPhp\Types\ServiceSelectionTypeEnum;
-use \Ag84ark\ColeteOnlineRoPhp\Types\ExtraOptions;
+use Ag84ark\ColeteOnlineRoPhp\Types\OrderPricing;
+use Ag84ark\ColeteOnlineRoPhp\Types\OrderSender;
+use Ag84ark\ColeteOnlineRoPhp\Types\OrderRecipient;
+use Ag84ark\ColeteOnlineRoPhp\Types\Contact;
+use Ag84ark\ColeteOnlineRoPhp\Types\Address;
+use Ag84ark\ColeteOnlineRoPhp\Types\Packages;
+use Ag84ark\ColeteOnlineRoPhp\Types\PackageTypeEnum;
+use Ag84ark\ColeteOnlineRoPhp\Types\PackageItem;
+use Ag84ark\ColeteOnlineRoPhp\Types\CurrierService;
+use Ag84ark\ColeteOnlineRoPhp\Types\ServiceSelectionTypeEnum;
+use Ag84ark\ColeteOnlineRoPhp\Types\ExtraOptions;
 
 
 $orderSender = OrderSender::create(
@@ -381,7 +381,7 @@ $orderSender = OrderSender::create(
             extraOptions: $extraOptions
         );
 
-/** @var Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
+/** @var \Ag84ark\ColeteOnlineRoPhp\ColeteOnline $coleteOnline */
 /** @var \Ag84ark\ColeteOnlineRoPhp\Responses\Order\OrderPricingResponse $orderPricing */
 $orderPricing = $coleteOnline->getOrderPricing($request);
 
