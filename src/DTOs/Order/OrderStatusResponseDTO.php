@@ -2,6 +2,8 @@
 
 namespace Ag84ark\ColeteOnlineRoPhp\DTOs\Order;
 
+use Illuminate\Support\Collection;
+
 class OrderStatusResponseDTO
 {
     public function __construct(
@@ -19,5 +21,14 @@ class OrderStatusResponseDTO
                 $data['history']
             ),
         );
+    }
+
+    /**
+     * @return OrderStatusHistoryItemDTO[]|Collection<OrderStatusHistoryItemDTO>
+     */
+    public function getHistoryCollection()
+    {
+        return Collection::make($this->history);
+
     }
 }

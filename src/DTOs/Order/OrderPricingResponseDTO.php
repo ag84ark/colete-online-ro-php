@@ -2,6 +2,8 @@
 
 namespace Ag84ark\ColeteOnlineRoPhp\DTOs\Order;
 
+use Illuminate\Support\Collection;
+
 class OrderPricingResponseDTO
 {
     /**
@@ -22,5 +24,14 @@ class OrderPricingResponseDTO
                 $data['list']
             )
         );
+    }
+
+    /**
+     * @return OrderCurrierServiceDTO[]|Collection<OrderCurrierServiceDTO>
+     */
+    public function getCurriersList()
+    {
+        return Collection::make($this->list) ?? Collection::make([]);
+
     }
 }

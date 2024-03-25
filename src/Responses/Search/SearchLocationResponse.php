@@ -2,7 +2,7 @@
 
 namespace Ag84ark\ColeteOnlineRoPhp\Responses\Search;
 
-use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\LocationsDTO;
+use Ag84ark\ColeteOnlineRoPhp\DTOs\Search\LocationDTO;
 use Illuminate\Support\Collection;
 use JsonException;
 use Saloon\Http\Response;
@@ -10,7 +10,7 @@ use Saloon\Http\Response;
 class SearchLocationResponse extends Response
 {
     /**
-     * @return array|LocationsDTO[]
+     * @return array|LocationDTO[]
      *
      * @throws JsonException
      */
@@ -24,7 +24,7 @@ class SearchLocationResponse extends Response
 
         $items = [];
         foreach ($data as $item) {
-            $items[] = new LocationsDTO(
+            $items[] = new LocationDTO(
                 city: $item['city'],
                 county: $item['county'],
                 countyCode: $item['countyCode'],
@@ -35,7 +35,7 @@ class SearchLocationResponse extends Response
     }
 
     /**
-     * @return Collection<LocationsDTO>
+     * @return Collection<LocationDTO>
      *
      * @throws JsonException
      */

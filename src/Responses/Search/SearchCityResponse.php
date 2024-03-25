@@ -26,7 +26,7 @@ class SearchCityResponse extends Response
         $items = [];
         foreach ($data['data'] as $item) {
             $items[] = new CityDTO(
-                city: $item['city'],
+                localityName: $item['localityName'],
                 county: $item['county'],
                 countyCode: $item['countyCode'],
             );

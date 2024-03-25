@@ -5,10 +5,11 @@ namespace Ag84ark\ColeteOnlineRoPhp\Types;
 class Contact extends BaseType
 {
     public function __construct(
-        public string $name,
-        public string $phone,
-        public string $phone2,
-        public string $email,
+        public string $name = '',
+        public string $phone = '',
+        public string $phone2 = '',
+        public string $email = '',
+        public string $company = '',
     ) {
     }
 
@@ -19,6 +20,7 @@ class Contact extends BaseType
             'phone' => $this->phone,
             'phone2' => $this->phone2,
             'email' => $this->email,
+            'company' => $this->company,
         ];
 
     }

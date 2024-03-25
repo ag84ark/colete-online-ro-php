@@ -2,7 +2,7 @@
 
 namespace Ag84ark\ColeteOnlineRoPhp\DTOs\Search;
 
-class LocationsDTO
+class LocationDTO
 {
     public function __construct(
         public readonly string $city,

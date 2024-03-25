@@ -18,12 +18,12 @@ class ServiceListResponse extends Response
     {
         $data = $this->json();
 
-        if (! is_array($data) || ! isset($data['data'])) {
+        if (! is_array($data) || ! isset($data)) {
             return [];
         }
 
         $items = [];
-        foreach ($data['data'] as $item) {
+        foreach ($data as $item) {
             $items[] = ServiceItemDTO::fromArray($item);
         }
 

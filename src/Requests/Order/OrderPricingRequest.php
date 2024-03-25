@@ -2,7 +2,7 @@
 
 namespace Ag84ark\ColeteOnlineRoPhp\Requests\Order;
 
-use Ag84ark\ColeteOnlineRoPhp\Responses\Order\CreateOrderResponse;
+use Ag84ark\ColeteOnlineRoPhp\Responses\Order\OrderPricingResponse;
 use Ag84ark\ColeteOnlineRoPhp\Types\CurrierService;
 use Ag84ark\ColeteOnlineRoPhp\Types\ExtraOptions;
 use Ag84ark\ColeteOnlineRoPhp\Types\OrderRecipient;
@@ -24,7 +24,7 @@ class OrderPricingRequest extends Request implements HasBody
 
     protected Method $method = Method::POST;
 
-    protected ?string $response = CreateOrderResponse::class;
+    protected ?string $response = OrderPricingResponse::class;
 
     public function __construct(
         protected OrderSender $sender,
