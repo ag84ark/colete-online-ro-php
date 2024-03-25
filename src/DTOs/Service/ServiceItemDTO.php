@@ -21,4 +21,14 @@ class ServiceItemDTO
             extraOptions: ServiceItemExtraOptionsDTO::fromArray($data['extraOptions']),
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'courierName' => $this->courierName,
+            'name' => $this->name,
+            'extraOptions' => $this->extraOptions->toArray(),
+        ];
+    }
 }

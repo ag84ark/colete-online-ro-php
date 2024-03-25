@@ -26,6 +26,17 @@ class OrderPricingResponseDTO
         );
     }
 
+    public function toArray(): array
+    {
+        return [
+            'selected' => $this->selected->toArray(),
+            'list' => array_map(
+                fn ($item) => $item->toArray(),
+                $this->list
+            ),
+        ];
+    }
+
     /**
      * @return OrderCurrierServiceDTO[]|Collection<OrderCurrierServiceDTO>
      */

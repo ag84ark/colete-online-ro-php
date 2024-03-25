@@ -23,6 +23,17 @@ class OrderStatusResponseDTO
         );
     }
 
+    public function toArray(): array
+    {
+        return [
+            'summary' => $this->summary->toArray(),
+            'history' => array_map(
+                fn ($historyItem) => $historyItem->toArray(),
+                $this->history
+            ),
+        ];
+    }
+
     /**
      * @return OrderStatusHistoryItemDTO[]|Collection<OrderStatusHistoryItemDTO>
      */

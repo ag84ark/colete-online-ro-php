@@ -17,4 +17,12 @@ class OrderCurrierServiceDTO
             price: CurierPriceDTO::fromArray($data['price']),
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'service' => $this->service->toArray(),
+            'price' => $this->price->toArray(),
+        ];
+    }
 }

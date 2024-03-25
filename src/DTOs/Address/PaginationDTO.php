@@ -19,4 +19,13 @@ class PaginationDTO
             totalPages: $data['totalPages'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'totalItems' => $this->totalItems,
+            'currentPage' => $this->currentPage,
+            'totalPages' => $this->totalPages,
+        ];
+    }
 }

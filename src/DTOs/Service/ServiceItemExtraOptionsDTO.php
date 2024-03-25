@@ -23,4 +23,14 @@ class ServiceItemExtraOptionsDTO
             extraOptions: $extraOptions
         );
     }
+
+    public function toArray(): array
+    {
+        $extraOptions = [];
+        foreach ($this->extraOptions as $extraOption) {
+            $extraOptions[] = $extraOption->toArray();
+        }
+
+        return $extraOptions;
+    }
 }

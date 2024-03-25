@@ -19,4 +19,13 @@ class ContactDTO
             company: $data['company'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'phone' => $this->phone,
+            'company' => $this->company,
+        ];
+    }
 }

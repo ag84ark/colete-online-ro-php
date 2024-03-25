@@ -21,4 +21,14 @@ class AddressItemDTO
             address: AddressDTO::fromArray($data['address']),
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'locationId' => $this->locationId,
+            'shortName' => $this->shortName,
+            'contact' => $this->contact->toArray(),
+            'address' => $this->address->toArray(),
+        ];
+    }
 }

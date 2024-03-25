@@ -10,4 +10,22 @@ class PaginationDTO
         public readonly int $totalPages,
     ) {
     }
+
+    public static function fromArray(array $data): PaginationDTO
+    {
+        return new PaginationDTO(
+            totalItems: $data['totalItems'],
+            currentPage: $data['currentPage'],
+            totalPages: $data['totalPages'],
+        );
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'totalItems' => $this->totalItems,
+            'currentPage' => $this->currentPage,
+            'totalPages' => $this->totalPages,
+        ];
+    }
 }

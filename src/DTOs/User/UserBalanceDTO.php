@@ -9,4 +9,20 @@ class UserBalanceDTO
         public float $bonus,
     ) {
     }
+
+    public static function fromArray(array $data): UserBalanceDTO
+    {
+        return new UserBalanceDTO(
+            amount: $data['amount'],
+            bonus: $data['bonus'],
+        );
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'amount' => $this->amount,
+            'bonus' => $this->bonus,
+        ];
+    }
 }

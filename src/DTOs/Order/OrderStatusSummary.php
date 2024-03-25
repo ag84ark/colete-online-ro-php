@@ -17,4 +17,12 @@ class OrderStatusSummary
             awb: $data['awb'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'uniqueId' => $this->uniqueId,
+            'awb' => $this->awb,
+        ];
+    }
 }

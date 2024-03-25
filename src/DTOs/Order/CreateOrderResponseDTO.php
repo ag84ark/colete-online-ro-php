@@ -21,4 +21,14 @@ class CreateOrderResponseDTO
             estimatedPickupDate: $data['estimatedPickupDate'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'service' => $this->curierService->toArray(),
+            'awb' => $this->awb,
+            'uniqueId' => $this->uniqueId,
+            'estimatedPickupDate' => $this->estimatedPickupDate,
+        ];
+    }
 }

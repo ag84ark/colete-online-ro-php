@@ -17,4 +17,12 @@ class OrderStatusHistoryItemStatusTextPart
             reason: $data['reason'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'reason' => $this->reason,
+        ];
+    }
 }

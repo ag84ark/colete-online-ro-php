@@ -25,4 +25,16 @@ class AddressDTO
             number: $data['number'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'countryCode' => $this->countryCode,
+            'postalCode' => $this->postalCode,
+            'city' => $this->city,
+            'county' => $this->county,
+            'street' => $this->street,
+            'number' => $this->number,
+        ];
+    }
 }

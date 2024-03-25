@@ -21,4 +21,14 @@ class CurierServiceDTO
             activationId: $data['activationId'] ?? null,
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'courierName' => $this->courierName,
+            'name' => $this->name,
+            'activationId' => $this->activationId,
+        ];
+    }
 }

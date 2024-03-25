@@ -17,4 +17,12 @@ class CurierPriceDTO
             noVat: $data['noVat'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'total' => $this->total,
+            'noVat' => $this->noVat,
+        ];
+    }
 }

@@ -21,4 +21,14 @@ class ServiceItemExtraOptionDTO
             optionalFields: $data['optionalFields'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'requiredFields' => $this->requiredFields,
+            'optionalFields' => $this->optionalFields,
+        ];
+    }
 }

@@ -15,4 +15,11 @@ class OrderStatusHistoryItemStatusTextParts
             ro: OrderStatusHistoryItemStatusTextPart::fromArray($data['ro']),
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'ro' => $this->ro->toArray(),
+        ];
+    }
 }

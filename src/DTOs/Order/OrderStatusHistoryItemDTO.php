@@ -25,4 +25,15 @@ class OrderStatusHistoryItemDTO
             code: $data['code'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'dateTime' => $this->dateTime->format('Y-m-d H:i:s'),
+            'unixDateTime' => $this->unixDateTime,
+            'statusTextParts' => $this->statusTextParts->toArray(),
+            'comment' => $this->comment->toArray(),
+            'code' => $this->code,
+        ];
+    }
 }

@@ -15,4 +15,11 @@ class OrderStatusHistoryItemComment
             ro: $data['ro'],
         );
     }
+
+    public function toArray(): array
+    {
+        return [
+            'ro' => $this->ro,
+        ];
+    }
 }

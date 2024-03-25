@@ -10,4 +10,22 @@ class CityDTO
         public readonly string $countyCode,
     ) {
     }
+
+    public static function fromArray(array $data): CityDTO
+    {
+        return new CityDTO(
+            localityName: $data['localityName'],
+            countyName: $data['countyName'],
+            countyCode: $data['countyCode'],
+        );
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'localityName' => $this->localityName,
+            'countyName' => $this->countyName,
+            'countyCode' => $this->countyCode,
+        ];
+    }
 }
